@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SunPower - Transaction History</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f8f8;
+        line-height: 1.6;
+        color: #333;
+      }
+      .text-warning {
+        color: #ffa500;
+      }
+      #navbarNav {
+        position: relative;
+        left: -500px;
+      }
+      a {
+        text-decoration: none;
+        color: #007bff;
+      }
+      .container {
+        width: 80%;
+        margin: 20px auto;
+      }
+      .card {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        overflow: hidden;
+      }
+      .transaction-history {
+        padding: 20px;
+      }
+      .transaction-history h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      .transaction-history form {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .transaction-history input[type="text"] {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 250px;
+      }
+      .transaction-history button {
+        padding: 10px 20px;
+        background-color: #ff9800;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-left: 10px;
+      }
+      .transaction-history table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .transaction-history th,
+      .transaction-history td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+      }
+      .transaction-history th {
+        background-color: #f8f8f8;
+      }
+      .transaction-history .completed {
+        color: #4caf50;
+      }
+      .transaction-history .waiting-approval {
+        color: #ff9800;
+      }
+      .transaction-history .rejected {
+        color: #f44336;
+      }
+      .bottom-footer {
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        margin-top: 124px;
+      }
+      .bottom-footer p {
+        color: white;
+        margin-bottom: 10px;
+      }
+      .bottom-footer .social-links a {
+        color: white;
+        margin: 0 10px;
+        font-size: 20px;
+      }
+      .bottom-footer .footer-links a {
+        color: white;
+        margin: 0 10px;
+        font-size: 14px;
+      }
+      @media (max-width: 480px) {
+        .container {
+          width: 95%;
+        }
+        .card {
+          width: 100%;
+        }
+        .transaction-history form {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .transaction-history input[type="text"] {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+        .transaction-history button {
+          margin-left: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html"
+            ><span class="text-warning">Sun</span>Power</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Profile.html">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Marketplace.html">Marketplace</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="History.html">History</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Support.html">Support</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container">
+      <div class="card">
+        <div class="transaction-history">
+          <h2>Transaction History</h2>
+          <form>
+            <input
+              type="text"
+              placeholder="Search keywords user name, product"
+            />
+            <button type="submit">Search</button>
+          </form>
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Counterparty</th>
+                <th>Quantity</th>
+                <th>Transaction Value</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>15/12/2024</td>
+                <td>Ahmed</td>
+                <td>50 KWh</td>
+                <td>100 ILS</td>
+                <td class="completed">✓ Completed</td>
+              </tr>
+              <tr>
+                <td>15/12/2024</td>
+                <td>Ahmed</td>
+                <td>50 KWh</td>
+                <td>100 ILS</td>
+                <td class="waiting-approval">⚠ Waiting Approval</td>
+              </tr>
+              <tr>
+                <td>15/12/2024</td>
+                <td>Ahmed</td>
+                <td>50 KWh</td>
+                <td>100 ILS</td>
+                <td class="rejected">❌ Rejected</td>
+              </tr>
+              <tr>
+                <td>15/12/2024</td>
+                <td>Ahmed</td>
+                <td>50 KWh</td>
+                <td>100 ILS</td>
+                <td class="completed">✓ Completed</td>
+              </tr>
+              <tr>
+                <td>15/12/2024</td>
+                <td>Ahmed</td>
+                <td>50 KWh</td>
+                <td>100 ILS</td>
+                <td class="waiting-approval">⚠ Waiting Approval</td>
+              </tr>
+              <tr>
+                <td>15/12/2024</td>
+                <td>Ahmed</td>
+                <td>50 KWh</td>
+                <td>100 ILS</td>
+                <td class="rejected">❌ Rejected</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-footer">
+      <p>Copyright © 2024 SunPower. All Rights Reserved.</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </body>
+</html>

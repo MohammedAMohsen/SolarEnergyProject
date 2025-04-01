@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SunPower Profile</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+      .navbar {
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+      }
+      .profile-section {
+        background-color: #ffe082;
+        height: 120px;
+        width: 100%;
+      }
+      .stats-section {
+        background-color: #fff9c4;
+      }
+      .card {
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        border: none;
+      }
+      .social-links a {
+        color: white !important;
+        font-size: 18px;
+        margin: 0 8px;
+      }
+      .footer-links a {
+        color: white !important;
+        margin: 0 8px;
+        font-size: 10px;
+      }
+      #img1 {
+        width: 80px;
+        position: relative;
+        left: 180px;
+        top: -110px;
+      }
+      #navbarNav {
+        position: relative;
+        right: 400px;
+      }
+      .Ahmed {
+        margin: 50px;
+      }
+      .Sun {
+        color: chocolate;
+      }
+      .but {
+        margin-left: 180px;
+        position: relative;
+        top: -90px;
+      }
+      .box1 {
+        background-color: #ffefdb;
+        padding: 10px;
+        border-radius: 5px;
+        margin-left: 20px;
+      }
+      .profile-details-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+      }
+      .user-info {
+        display: flex;
+        align-items: center;
+      }
+      .stats-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px;
+      }
+      .stats-container div {
+        text-align: center;
+        margin: 0 10px;
+      }
+      .stats-container h3 {
+        font-size: 14px;
+      }
+      .stats-container p {
+        font-size: 12px;
+        color: coral;
+        font-weight: 500;
+      }
+      .Ahmed h2 {
+        font-size: 20px;
+      }
+      .Ahmed p {
+        font-size: 12px;
+      }
+      .Ahmed span {
+        font-size: 12px;
+      }
+      .btn-sm {
+        font-size: 12px;
+      }
+      .about-section,
+      #general {
+        background-color: #f5f3f3;
+        padding: 30px;
+        width: 60%;
+        margin-left: 120px;
+        border-radius: 15px;
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
+      }
+      .reviews-section {
+        position: absolute;
+        top: 400px;
+        left: 912px;
+        background-color: #f5f3f3;
+        padding: 15px;
+        border-radius: 15px;
+      }
+      .foot_footer {
+        margin-left: 900px;
+      }
+      .copy {
+        position: absolute;
+      }
+
+      @media (max-width: 768px) {
+        .navbar-nav {
+          text-align: center;
+        }
+        #navbarNav {
+          right: 0;
+        }
+        .user-info {
+          margin-left: -70px;
+        }
+        .but {
+          position: relative;
+          left: 20px;
+        }
+
+        .profile-section {
+          height: 100px;
+        }
+        #img1 {
+          width: 60px;
+          left: 210px;
+          top: -120px;
+        }
+
+        .profile-details-container {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+        .stats-container {
+          flex-direction: row;
+          align-items: center;
+          position: relative;
+          left: -150px;
+          top: -80px;
+        }
+        .box1 {
+          margin-bottom: 10px;
+          padding: 40px;
+        }
+        .about-section,
+        #general {
+          width: 90%;
+          margin-left: 5%;
+        }
+        .reviews-section {
+          position: relative;
+          top: 8px;
+          left: 0px;
+          width: 100%;
+        }
+        .foot_footer {
+          text-align: center;
+          margin-left: 0;
+          position: absolute;
+          top: 1000px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        #img1 {
+          width: 50px;
+        }
+        .Ahmed h2 {
+          font-size: 18px;
+        }
+        .stats-container h3 {
+          font-size: 14px;
+        }
+        .stats-container p {
+          font-size: 12px;
+        }
+        .review h4 {
+          font-size: 14px;
+        }
+        .review p {
+          font-size: 10px;
+        }
+      }
+      .stats-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px;
+      }
+
+      .stats-container div {
+        text-align: center;
+        margin: 0 10px;
+      }
+
+      /* استجابة للشاشات الصغيرة */
+      @media (max-width: 768px) {
+        .stats-container {
+          flex-direction: column; /* ترتيب العناصر عموديًا */
+          align-items: center;
+          margin-left: 300px; /* محاذاة العناصر في المنتصف */
+        }
+
+        .stats-container div {
+          margin-bottom: 10px;
+        }
+      }
+      footer {
+        padding: 3rem 1rem;
+        background-color: #343a40;
+        color: white;
+        text-align: center;
+      }
+
+      footer .social-links a {
+        font-size: 20px;
+        margin: 0 15px;
+      }
+
+      footer .foot_footer a {
+        font-size: 14px;
+        margin: 0 10px;
+      }
+
+      @media (max-width: 768px) {
+        footer {
+          padding: 2rem 1rem;
+        }
+
+        footer .social-links {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 1rem;
+          margin-top: 50px;
+        }
+
+        footer .social-links a {
+          font-size: 18px;
+          margin-top: 10px;
+        }
+
+        footer .foot_footer {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+
+        footer .foot_footer a {
+          margin: 0 10px;
+          font-size: 12px;
+        }
+      }
+      footer .copy {
+        margin-left: 40px;
+      }
+
+      @media (max-width: 480px) {
+        footer {
+          padding: 1.5rem 1rem;
+        }
+
+        footer .social-links a {
+          font-size: 16px;
+        }
+
+        footer .foot_footer {
+          display: block;
+        }
+
+        footer .foot_footer a {
+          margin: 5px 0;
+          font-size: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a href="index.html" class="navbar-brand">
+          <span class="Sun">Sun</span>Power</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Profile.html">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Marketplace.html">Marketplace</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="History.html">History</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Support.html">Support</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+      <div class="card">
+        <div class="card-body">
+          <section class="profile-section p-3 rounded"></section>
+          <div class="profile-details-container">
+            <div class="user-info">
+              <img
+                id="img1"
+                src="img/man.png"
+                class="rounded-circle me-3"
+                alt="Profile Image"
+              />
+              <div class="Ahmed">
+                <h2>Ahmed AlBarber</h2>
+                <p class="text-muted">Gaza, Alremal Street</p>
+                <span><i class="fas fa-star"></i> 5.0</span>
+                <div class="but">
+                  <span class="badge bg-warning text-white p-2">Seller</span>
+                  <a href="Messages.html"
+                    ><button class="btn btn-sm btn-light">
+                      Send Message
+                    </button></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="stats-container d-flex">
+              <div class="box1">
+                <h3>Produced Energy</h3>
+                <p>120 kWh</p>
+              </div>
+              <div class="box1">
+                <h3>Consumed Energy</h3>
+                <p>80 kWh</p>
+              </div>
+              <div class="box1">
+                <h3>Current Balance</h3>
+                <p>40 kWh</p>
+              </div>
+            </div>
+          </div>
+
+          <section class="about-section mt-3">
+            <h2>About</h2>
+            <p>
+              I'm experienced in eCommerce web projects and mobile banking apps,
+              and I also work on creative projects like landing pages and unique
+              corporate websites. <a href="#">READ MORE</a>
+            </p>
+          </section>
+
+          <section id="general" class="general-info-section mt-3">
+            <h2>General Information</h2>
+            <ul class="list-unstyled">
+              <li>Mobile: +972 592839475</li>
+              <li>Email: Medo2004@gmail.com</li>
+              <li>Working Hours: 8:00 AM - 6:00 PM</li>
+            </ul>
+          </section>
+
+          <section id="reviews-section" class="reviews-section">
+            <h2>Reviews</h2>
+            <div class="review border-bottom pb-2">
+              <h4>Excellent Web Design</h4>
+              <p class="text-muted">By Besan R. - Dec 3, 2024</p>
+              <div class="stars text-warning">★★★★★</div>
+            </div>
+            <div class="review pt-2 mt-lg-3">
+              <h4>Great Service</h4>
+              <p class="text-muted">By Dawood R. - Dec 3, 2024</p>
+              <div class="stars text-warning">★★★★★</div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <footer class="bg-dark text-white py-3 mt-4 text-center p-lg-5 mt-lg-5">
+      <p class="copy">&copy; 2024 SunPower, All Rights Reserved</p>
+      <div class="social-links">
+        <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/" class="text-white mx-2"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-white mx-2"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+      </div>
+      <div class="foot_footer">
+        <a href="#" class="text-white mx-2">Profile</a>
+        <a href="#" class="text-white mx-2">Marketplace</a>
+        <a href="#" class="text-white mx-2">History</a>
+        <a href="#" class="text-white mx-2">Support</a>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

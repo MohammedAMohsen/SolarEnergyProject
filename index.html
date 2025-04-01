@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SunPower</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <style>
+      .social-links a {
+        color: white !important;
+        font-size: 1.2rem;
+        margin: 0 10px;
+        transition: color 0.3s ease;
+      }
+
+      .social-links a:hover {
+        color: #eb7f00;
+      }
+
+      .footer-links a {
+        color: white !important;
+        margin: 0 10px;
+        font-size: 0.8rem;
+        transition: color 0.3s ease;
+        position: relative;
+        left: 500px;
+      }
+
+      .footer-links a:hover {
+        color: #eb7f00;
+      }
+
+      .custom-button {
+        color: white;
+        background-color: #eb7f00;
+        border-color: #eb7f00;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+      }
+
+      .custom-button:hover {
+        background-color: #c56f00;
+        border-color: #c56f00;
+      }
+
+      header {
+        text-align: center;
+        padding: 50px 20px;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .container1 {
+        text-align: center;
+        padding: 50px 20px;
+      }
+
+      .container2 {
+        padding: 50px 20px;
+      }
+
+      @media (min-width: 768px) {
+        header {
+          width: 100%;
+          color: black;
+        }
+
+        header h1 {
+          font-size: 2.9rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        #navbarNav {
+          color: #000;
+        }
+
+        header {
+          height: 500px;
+          color: black;
+        }
+
+        header h1 {
+          position: relative;
+          left: 10px;
+          top: 100px;
+          font-size: 40px;
+        }
+
+        #linkes {
+          position: relative;
+          left: -500px;
+        }
+
+        .copy {
+          margin-top: 100px;
+        }
+        li {
+          margin-left: -300px;
+        }
+        .footer-links a {
+          position: relative;
+          left: -700px;
+        }
+
+        nav.navbar .navbar-brand,
+        nav.navbar .navbar-nav .nav-link {
+          color: rgb(0, 0, 0) !important;
+        }
+        ul {
+          text-align: center;
+        }
+      }
+
+      nav.navbar {
+        position: relative;
+        z-index: 1000;
+      }
+      nav.nav-item {
+        color: #000;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-4"></div>
+        <div class="col-12 col-md-6 col-lg-4"></div>
+        <div class="col-12 col-md-6 col-lg-4"></div>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a href="index.html" class="navbar-brand">
+          <span class="Sun">Sun</span>Power</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav overlay-box">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Profile.html">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Marketplace.html">Marketplace</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="History.html">History</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Support.html">Support</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="container">
+      <h1>
+        <span>Power</span> the future with solar<br />
+        energy – together, we <br />create a sustainable<br />
+        world!
+      </h1>
+    </header>
+
+    <div class="container container1">
+      <h2>Choose to show our services</h2>
+      <div class="d-grid gap-2 d-md-block p-4">
+        <a href="login.html" class="btn btn-outline-light">Join as a Buyer</a>
+        <a href="Seller_account.html" class="btn custom-button"
+          >Join as a Seller</a
+        >
+      </div>
+    </div>
+
+    <div class="container container2">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center">
+          <img id="icn" src="img/2.jpeg" alt="Solar Energy" class="img-fluid" />
+        </div>
+        <div class="col-md-6 text-center text-md-start">
+          <p class="A">
+            "A local system based on solar energy, where households or
+            institutions with solar panels are empowered to sell or exchange
+            excess electricity with others in the neighborhood or city."
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-dark text-white py-3 mt-4 text-center p-lg-5 mt-lg-5">
+      <p class="copy">&copy; 2024 SunPower, All Rights Reserved</p>
+      <div class="social-links">
+        <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/" class="text-white mx-2"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-white mx-2"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+      </div>
+      <div id="linkes" class="footer-links">
+        <a href="#" class="text-white mx-2">Profile</a>
+        <a href="#" class="text-white mx-2">Marketplace</a>
+        <a href="#" class="text-white mx-2">History</a>
+        <a href="#" class="text-white mx-2">Support</a>
+      </div>
+    </footer>
+
+    <script src="js/bootstrap.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/jquery-3.7.1.js"></script>
+  </body>
+</html>

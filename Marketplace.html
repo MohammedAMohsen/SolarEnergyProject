@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SunPower Marketplace</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        color: #222;
+      }
+      .hero {
+        color: #222;
+        padding: 60px 0;
+        text-align: center;
+      }
+      .search-box {
+        max-width: 500px;
+        margin: auto;
+      }
+      .product-card {
+        border: 1px solid #eee;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin: 0 10px; /* Add margin between cards */
+        min-width: 300px; /* Set a minimum width for the cards */
+      }
+      li {
+        position: relative;
+        left: 240px;
+      }
+
+      .btn-warning {
+        background-color: #a00000;
+        color: white;
+        border: none;
+        width: 100%;
+        margin-top: 15px;
+      }
+      .footer {
+        background: #222;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+      .foot_footer {
+        margin-left: 900px;
+      }
+
+      .footer a {
+        color: white;
+        margin: 0 10px;
+      }
+      .product-card h5 {
+        font-size: 1.2em;
+        text-align: center;
+      }
+      .product-card p {
+        margin-bottom: 5px;
+        text-align: center;
+        font-size: 20px;
+      }
+      .product-card .text-danger {
+        font-weight: bold;
+      }
+      .carousel-container {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+      }
+      .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease;
+      }
+      #Discover {
+        color: #000;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .carousel-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.8);
+        border: none;
+        padding: 10px 15px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      .prev {
+        left: 0;
+      }
+      .next {
+        right: 0;
+      }
+      #navbarNav {
+        margin-right: 1200px;
+      }
+      .a {
+        color: white;
+        margin: 0 10px;
+        font-size: 20px;
+      }
+      .copy {
+        position: absolute;
+      }
+
+      @media (max-width: 480px) {
+        .card {
+          width: 400px;
+          margin-left: -40px;
+        }
+        .foot_footer {
+          position: relative;
+          left: -600px;
+        }
+        .Social {
+          position: relative;
+          top: 50px;
+        }
+        li {
+          position: relative;
+          left: 150px;
+        }
+      }
+      .social-links {
+        margin-left: -500px;
+        position: relative;
+        top: -40px;
+      }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"
+          ><span class="text-warning">Sun</span>Power</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Profile.html">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="Marketplace.html">Marketplace</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="History.html">History</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Support.html">Support</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fas fa-search"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <div class="container">
+        <h2 id="Discover">
+          Discover the Best Deals for Your<br />
+          Solar Energy Needs.
+        </h2>
+        <div class="input-group search-box mt-2 w-50">
+          <input
+            type="text"
+            class="form-control w-50 mt-3"
+            placeholder="Search..."
+          />
+          <button class="btn-warning w-25 p-2" aria-label="Search">
+            <i class="fas fa-search"></i>
+          </button>
+          <select class="form-select ms-2 mt-4">
+            <option>Filter</option>
+            <option>Price</option>
+            <option>Quantity</option>
+            <option>Rating</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="carousel-container">
+        <div class="carousel-track">
+          <div class="card product-card">
+            <h5>
+              High-Efficiency<br />
+              Solar Panels
+            </h5>
+            <p class="text-danger">$25/KW</p>
+            <p>Available: 50 KW</p>
+            <p>Gaza, Alremal Street</p>
+            <p class="text-warning">★★★★★ 5.0</p>
+            <a href="the_plan.html" class="btn btn-warning">Select Plan</a>
+          </div>
+          <div class="card product-card">
+            <h5>
+              High-Efficiency<br />
+              Solar Panels
+            </h5>
+            <p class="text-danger">$25/KW</p>
+            <p>Available: 50 KW</p>
+            <p>Gaza, Alremal Street</p>
+            <p class="text-warning">★★★★★ 5.0</p>
+            <a href="the_plan.html" class="btn btn-warning">Select Plan</a>
+          </div>
+          <div class="card product-card">
+            <h5>
+              High-Efficiency<br />
+              Solar Panels
+            </h5>
+            <p class="text-danger">$25/KW</p>
+            <p>Available: 50 KW</p>
+            <p>Gaza, Alremal Street</p>
+            <p class="text-warning">★★★★★ 5.0</p>
+            <a href="the_plan.html" class="btn btn-warning">Select Plan</a>
+          </div>
+          <div class="card product-card">
+            <h5>
+              High-Efficiency<br />
+              Solar Panels
+            </h5>
+            <p class="text-danger">$25/KW</p>
+            <p>Available: 50 KW</p>
+            <p>Gaza, Alremal Street</p>
+            <p class="text-warning">★★★★★ 5.0</p>
+            <a href="the_plan.html" class="btn btn-warning">Select Plan</a>
+          </div>
+          <div class="card product-card">
+            <h5>
+              High-Efficiency<br />
+              Solar Panels
+            </h5>
+            <p class="text-danger">$25/KW</p>
+            <p>Available: 50 KW</p>
+            <p>Gaza, Alremal Street</p>
+            <p class="text-warning">★★★★★ 5.0</p>
+            <a href="the_plan.html" class="btn btn-warning">Select Plan</a>
+          </div>
+        </div>
+        <button class="carousel-button prev">&#10094;</button>
+        <button class="carousel-button next">&#10095;</button>
+      </div>
+    </div>
+
+    <footer class="bg-dark text-white py-3 mt-4 text-center p-lg-5 mt-lg-5">
+      <p class="copy">&copy; 2024 SunPower, All Rights Reserved</p>
+      <div class="Social">
+        <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/" class="text-white mx-2"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-white mx-2"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+      </div>
+      <div class="foot_footer">
+        <a href="#" class="text-white mx-2">Profile</a>
+        <a href="#" class="text-white mx-2">Marketplace</a>
+        <a href="#" class="text-white mx-2">History</a>
+        <a href="#" class="text-white mx-2">Support</a>
+      </div>
+    </footer>
+
+    <script>
+      // 1. تحديد العناصر من DOM باستخدام querySelector و querySelectorAll
+      const track = document.querySelector(".carousel-track"); // الحصول على العنصر الذي يحتوي على بطاقات المنتجات
+      const cards = document.querySelectorAll(".product-card"); // الحصول على جميع بطاقات المنتجات
+      const prevButton = document.querySelector(".prev"); // الحصول على زر "السابق"
+      const nextButton = document.querySelector(".next"); // الحصول على زر "التالي"
+
+      // 2. تحديد عرض بطاقة المنتج وحساب الهامش
+      let cardWidth = cards[0].offsetWidth + 20; // حساب عرض أول بطاقة وإضافة هامش 20 بكسل
+      let currentIndex = 0; // تحديد الفهرس الحالي للبطاقة المعروضة، يبدأ من 0 (البطاقة الأولى)
+
+      // 3. إضافة مستمع حدث النقر لزر "التالي"
+      nextButton.addEventListener("click", () => {
+        // 4. التحقق من أن المستخدم لم يصل إلى نهاية الدوارة
+        if (currentIndex < cards.length - 3) {
+          // 3 هنا يعني انه يتم عرض 3 عناصر في نفس الوقت.
+          // 5. زيادة الفهرس بمقدار 1 للانتقال إلى البطاقة التالية
+          currentIndex++;
+          // 6. تحريك العنصر "track" أفقيًا باستخدام transform: translateX
+          track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+        }
+      });
+
+      // 7. إضافة مستمع حدث النقر لزر "السابق"
+      prevButton.addEventListener("click", () => {
+        // 8. التحقق من أن المستخدم لم يصل إلى بداية الدوارة
+        if (currentIndex > 0) {
+          // 9. تقليل الفهرس بمقدار 1 للانتقال إلى البطاقة السابقة
+          currentIndex--;
+          // 10. تحريك العنصر "track" أفقيًا باستخدام transform: translateX
+          track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+        }
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

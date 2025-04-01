@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join as a Seller Account</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .form-container {
+            max-width: 500px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            background-color: #ff8800;
+            border-color: #ff8800;
+        }
+        .btn-primary:hover {
+            background-color: #e67e00;
+            border-color: #e67e00;
+        }
+        .terms-link, .privacy-link {
+            color: #ff8800;
+            text-decoration: none;
+        }
+        .terms-link:hover, .privacy-link:hover {
+            text-decoration: underline;
+        }
+        .required::after {
+            content: '*';
+            color: red;
+            margin-left: 5px;
+        }
+        .error-message {
+            color: red;
+            font-size: 0.8em;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2 class="text-center mb-4" style="color: #ff8800;">Join as a Seller account</h2>
+            <form id="sellerForm">
+                <div class="mb-3">
+                    <label for="sellerName" class="form-label required">Seller Name</label>
+                    <input type="text" class="form-control" id="sellerName" placeholder="Enter your company name">
+                    <div id="sellerNameError" class="error-message"></div>
+                </div>
+                <div class="mb-3">
+                    <label for="emailAddress" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="emailAddress" placeholder="Enter your email address">
+                    <div id="emailError" class="error-message"></div>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <div class="input-group">
+                        <input type="password" class="form-control" id="password" placeholder="Enter password (at least 8 characters)">
+                        <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div id="passwordError" class="error-message"></div>
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-label">Your Location</label>
+                    <select class="form-select" id="location">
+                        <option value="">Choose your current location</option>
+                        <option value="location1">Location 1</option>
+                        <option value="location2">Location 2</option>
+                        <option value="location3">Location 3</option>
+                    </select>
+                    <div id="locationError" class="error-message"></div>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="terms">
+                    <label class="form-check-label" for="terms">
+                        By clicking Agree And Join, you confirm that you have read and agree to
+                        SunPower's
+                        <a href="#" class="terms-link">Terms & Conditions</a>
+                        &
+                        <a href="#" class="privacy-link">Privacy Policy</a>.
+                        .
+                    </label>
+                    <div id="termsError" class="error-message"></div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block w-100">Agree & Join SunPower</button>
+                <div class="text-center mt-3">
+                    Or continue with
+                </div>
+                <div class="text-center mt-3">
+                    <a href="#" class="btn btn-outline-primary mx-1"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="btn btn-outline-danger mx-1"><i class="fab fa-google"></i></a>
+                    <a href="#" class="btn btn-outline-info mx-1"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="text-center mt-3">
+                    Already have an account? <a href="login.html">Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const passwordInput = document.getElementById('password');
+            const passwordType = passwordInput.getAttribute('type');
+            if (passwordType === 'password') {
+                passwordInput.setAttribute('type', 'text');
+                this.innerHTML = '<i class="fas fa-eye-slash"></i>';
+            } else {
+                passwordInput.setAttribute('type', 'password');
+                this.innerHTML = '<i class="fas fa-eye"></i>';
+            }
+        });
+
+        document.getElementById('sellerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const sellerName = document.getElementById('sellerName').value;
+            const email = document.getElementById('emailAddress').value;
+            const password = document.getElementById('password').value;
+            const location = document.getElementById('location').value;
+            const terms = document.getElementById('terms').checked;
+
+            const sellerNameError = document.getElementById('sellerNameError');
+            const emailError = document.getElementById('emailError');
+            const passwordError = document.getElementById('passwordError');
+            const locationError = document.getElementById('locationError');
+            const termsError = document.getElementById('termsError');
+
+            sellerNameError.textContent = '';
+            emailError.textContent = '';
+            passwordError.textContent = '';
+            locationError.textContent = '';
+            termsError.textContent = '';
+
+            let isValid = true;
+
+            if (!sellerName) {
+                sellerNameError.textContent = 'Seller name is required.';
+                isValid = false;
+            }
+
+            if (email && !isValidEmail(email)) {
+                emailError.textContent = 'Invalid email format.';
+                isValid = false;
+            }
+
+            if (!password || password.length < 8) {
+                passwordError.textContent = 'Password must be at least 8 characters.';
+                isValid = false;
+            }
+
+            if (!location) {
+                locationError.textContent = 'Please choose a location.';
+                isValid = false;
+            }
+
+            if (!terms) {
+                termsError.textContent = 'Please agree to the terms and conditions.';
+                isValid = false;
+            }
+
+            if (isValid) {
+                window.location.href = "Buyer_account.html";
+            }
+        });
+
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+    </script>
+</body>
+</html>
